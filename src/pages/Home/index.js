@@ -2,13 +2,21 @@ import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { View, FlatList, Text, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native'
+import CartIcon from '../../Components/cartIcon'
 import styles from './styles'
 
+import Product from '../../services/products[1447].json'
+
 export default function Home() {
+  let image = `../../assets/${Product.image}`
   const navigation = useNavigation()
 
   function navigateToCart() {
     navigation.navigate('Cart')
+  }
+
+  function sortFilter(){
+    alert('sort')
   }
 
   return (
@@ -19,37 +27,39 @@ export default function Home() {
       </View>
 
       <TouchableOpacity style={styles.buttonCart} onPress={navigateToCart}>
-        <Text>CARRINHO</Text>
+        <CartIcon style={styles.cart}/>
       </TouchableOpacity>
 
       <Text style={styles.filterBy}>Filtrar por:</Text>
 
         <View style={styles.filterList}>
-          <View style={styles.filter}>
+          <TouchableOpacity style={styles.filter} onPress={sortFilter}>
             <Text style={styles.filterTextAlfabetica}>  Ordem Alfabética</Text>
-          </View>
-          <View style={styles.filter}>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.filter}>
             <Text style={styles.filterText}>Score</Text>
-          </View>
-          <View style={styles.filter}>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.filter}>
             <Text style={styles.filterText}>Preço</Text>
-          </View>
+          </TouchableOpacity>
         </View>
 
 
       <FlatList 
-      data={[1, 2, 3, 4, 5, 6]} 
+      data={Product} 
       style={styles.gameList} 
-      keyExtractor={game => String(game)}
+      keyExtractor={Product => String(Product.id)}
       showsVerticalScrollIndicator={false}
-      renderItem={() => (
-        <View style={styles.game}>
-        <Image style={styles.gameImg} source={require('../../assets/call-of-duty-wwii.png')} />
-        <Text style={styles.gameName}>Call Of Duty</Text>
+      renderItem={({ item: Product }) => (
+      <View style={styles.game}>
+        <Image style={styles.gameImg} source={image} />
+        <Text style={styles.gameName}>{Product.name}</Text>
 
         <View style={styles.gameInfo}>
-          <Text style={styles.gamePrice}>R$ 80,00</Text>
-          <Text style={styles.gameScore}>Score: 100</Text>
+          <Text style={styles.gamePrice}>R$ {Product.price}</Text>
+          <Text style={styles.gameScore}>Score: {Product.score}</Text>
         </View>
         
         <TouchableOpacity style={styles.buyButton} onPress={() => {}}>

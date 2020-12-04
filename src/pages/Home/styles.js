@@ -12,7 +12,6 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-end',
     backgroundColor: '#fafafa',
-    borderRadius: 16,
     marginBottom: 20
   },
 
@@ -23,16 +22,12 @@ export default StyleSheet.create({
   },
 
   buttonCart: {
-    backgroundColor:'#999',
-    width: 100,
-    alignSelf: 'flex-end'
-  },
-
-  cart: {
-    alignSelf: 'center',
-    marginBottom: 20,
-    width: 50,
-    height: 50,
+    width: 56,
+    alignSelf: 'flex-end',
+    alignItems: 'center',
+    marginRight: 10,
+    backgroundColor: '#fff',
+    borderRadius: 50
   },
 
   filterBy: {
@@ -88,7 +83,7 @@ export default StyleSheet.create({
 
   gameName: {
     marginTop: 20,
-    fontSize: 36,
+    fontSize: 18,
     fontWeight: 'bold',
     alignSelf: 'center'
   },
