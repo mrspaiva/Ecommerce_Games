@@ -12,7 +12,6 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-end',
     backgroundColor: '#fafafa',
-    borderRadius: 16,
     marginBottom: 20
   },
 
