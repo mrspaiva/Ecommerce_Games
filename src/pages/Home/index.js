@@ -81,7 +81,7 @@ export default function Home() {
       showsVerticalScrollIndicator={false}
       renderItem={({ item: Product }) => (
         <View style={styles.game}>
-        <Image style={styles.gameImg} source={require('../../assets/the-witcher-iii-wild-hunt.png')} 
+        <Image style={styles.gameImg} source={{uri: `${Product.image}`}} 
         />
         <Text style={styles.gameName}>{Product.name}</Text>
 
