@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native'
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#bcbcbc',
+    backgroundColor: '#dedede',
   },
 
   statusBar: {
@@ -26,7 +26,6 @@ export default StyleSheet.create({
     alignSelf: 'flex-end',
     alignItems: 'center',
     marginRight: 10,
-    backgroundColor: '#fff',
     borderRadius: 50
   },
 
@@ -43,11 +42,12 @@ export default StyleSheet.create({
   filter: {
     marginTop: 10,
     marginHorizontal: 10,
-    backgroundColor: '#fafafa',
     alignItems: 'center',
     justifyContent: 'center',
     width: 90,
     borderRadius: 10,
+    borderBottomColor: '#000',
+    borderBottomWidth: 1
   },
   
   filterText: {
@@ -103,9 +103,9 @@ export default StyleSheet.create({
   },
 
   buyButton: {
-    backgroundColor: '#e02000',
+    backgroundColor: '#300929',
     marginTop: 20,
-    borderRadius: 20,
+    borderRadius: 10,
     justifyContent: 'center',
     alignSelf: 'center',
     height: 40,

@@ -23,14 +23,18 @@ export default StyleSheet.create({
 
   back: {
     marginTop: 15,
-    marginLeft: 10
+    width: '16%',
+    height: '5%',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
 
   cartText: {
     alignSelf: 'center',
     fontSize: 24,
-    marginBottom: '20%',
-    marginTop: '8%'
+    marginBottom: '14%',
+    marginTop: '4%',
+    fontWeight: 'bold'
   },
 
   product: {
@@ -44,13 +48,22 @@ export default StyleSheet.create({
     fontWeight: 'bold'
   },
 
-  productDelete: {
-    marginRight: 20,
-    fontWeight: 'bold'
+  delete: {
+    backgroundColor: '#999',
+    borderRadius: 6,
+    marginRight: 10,
+    width: 50,
+    height: 28,
+    justifyContent: 'center',
+    paddingHorizontal: 20
+  },
+
+  textDelete: {
+    fontWeight: 'bold',
   },
 
   subtotal: {
-    marginTop: 35,
+    marginTop: 25,
     flexDirection: 'row',
     justifyContent: 'space-around',
     marginBottom: 20,
@@ -92,18 +105,20 @@ export default StyleSheet.create({
   },
 
   buyButton: {
-    backgroundColor: '#e04999',
+    backgroundColor: '#300929',
     alignItems: 'center',
     justifyContent: 'center',
     alignSelf: 'center',
     height: '8%',
     width: '80%',
-    marginTop: 30,
-    borderRadius: 10
+    marginTop: 22,
+    borderRadius: 10,
+    marginBottom: 10
   },
 
   buy: {
     color: '#fff',
-    fontSize: 20
+    fontSize: 20,
+    fontWeight: 'bold'
   }
 })

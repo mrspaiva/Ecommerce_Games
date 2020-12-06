@@ -8,18 +8,43 @@ import Product from '../../services/products[1447].json'
 import { useCart } from '../../context/addCart'
 
 export default function Home() {
+  const [product, setProduct] = useState(Product)
 
   const { add } = useCart()
 
   const navigation = useNavigation()
-
   function navigateToCart() {
     navigation.navigate('Cart')
   }
 
-  function sortData() {
-    let data = {Product}
-    console.log(data.name)
+  function sortName() {
+    let data = Product
+    let byName = ((object) => {
+      return object.name
+    })
+    let data1 = (data.map(byName));
+    let data2 = data1.sort()
+    alert(data2)
+  }
+
+  function sortScore() {
+    let data = Product
+    let byScore = ((object) => {
+      return object.score
+    })
+    let data1 = (data.map(byScore));
+    let data2 = data1.sort()
+    alert(data2)
+  }
+
+  function sortPrice(){
+    let data = Product
+    let byPrice = ((object) => {
+      return object.price
+    })
+    let data1 = (data.map(byPrice));
+    let data2 = data1.sort()
+    alert(data2)
   }
 
   return (
@@ -36,28 +61,28 @@ export default function Home() {
       <Text style={styles.filterBy}>Filtrar por:</Text>
 
         <View style={styles.filterList}>
-          <TouchableOpacity style={styles.filter} onPress={sortData}>
+          <TouchableOpacity style={styles.filter} onPress={sortName}>
             <Text style={styles.filterTextAlfabetica}>  Ordem Alfabética</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.filter}>
+          <TouchableOpacity style={styles.filter} onPress={sortScore}>
             <Text style={styles.filterText}>Score</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.filter}>
+          <TouchableOpacity style={styles.filter} onPress={sortPrice}>
             <Text style={styles.filterText}>Preço</Text>
           </TouchableOpacity>
         </View>
 
-
       <FlatList 
-      data={Product} 
+      data={product} 
       style={styles.gameList} 
       keyExtractor={Product => String(Product.id)}
       showsVerticalScrollIndicator={false}
       renderItem={({ item: Product }) => (
         <View style={styles.game}>
-        <Image style={styles.gameImg} source={require('../../assets/fifa-18.png')} />
+        <Image style={styles.gameImg} source={require('../../assets/the-witcher-iii-wild-hunt.png')} 
+        />
         <Text style={styles.gameName}>{Product.name}</Text>
 
         <View style={styles.gameInfo}>

@@ -16,6 +16,14 @@ export default function Cart() {
     navigation.navigate('Home')
   }
 
+  function confirm() {
+    if(cart == 0) {
+      alert('Não há produtos no carrinho')
+    }else{
+      alert('Compra confirmada')
+    }
+  }
+
   if(cart == 0) {
     alert('não há nada aqui')
   }
@@ -40,9 +48,12 @@ export default function Cart() {
         showsVerticalScrollIndicator={false}
         renderItem={({ item: Product }) => (
             <View style={styles.product}>
+              <View>
               <Text style={styles.productName}>{Product.name}</Text>
-              <TouchableOpacity onPress={() => del(Product)}>
-                <Text style={styles.productDelete}>X</Text>
+              <Text style={styles.productName}>R$ {Product.price}</Text>
+              </View>
+              <TouchableOpacity style={styles.delete} onPress={() => del(Product)}>
+                <Text style={styles.textDelete}>X</Text>
               </TouchableOpacity>
             </View>
         )}/>
@@ -62,8 +73,8 @@ export default function Cart() {
           <Text style={styles.totalValue}>R$ {total}</Text>
         </View>
 
-        <TouchableOpacity style={styles.buyButton}>
-          <Text style={styles.buy}>Comprar</Text>
+        <TouchableOpacity style={styles.buyButton} onPress={confirm}>
+          <Text style={styles.buy}>Confirmar</Text>
         </TouchableOpacity>
     </View>
   )
