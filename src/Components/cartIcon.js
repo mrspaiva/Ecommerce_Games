@@ -4,8 +4,8 @@ import Svg, { Path } from "react-native-svg"
 const CartIcon = () => {
   return ( 
     <Svg
-      width={35}
-      height={35}
+      width={38}
+      height={38}
       viewBox="0 0 90 72"
     >
       <Path
@@ -17,4 +17,4 @@ const CartIcon = () => {
   )
 }
 
-export default CartIcon;
+export default CartIcon

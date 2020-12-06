@@ -30,7 +30,7 @@ export default function CartProvider({children}) {
       frete = 0
     }
     
-    setSubtotal(subtotal)
+    setSubtotal(subtotal.toFixed(2))
     setFrete(frete)
     setTotal(total)
   },[cart])
