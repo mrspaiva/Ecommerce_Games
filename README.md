@@ -11,7 +11,7 @@
   <li><a href="https://eslint.org/">Eslint</a></li>
 </ul>
 
-### Como testar este projeto:
+### Como rodar este projeto:
  ```bash
  # Clone este repositório 
  $ git clone https://github.com/mrspaiva/teste-supera.git
